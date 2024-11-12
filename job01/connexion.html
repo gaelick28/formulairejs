@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>connexion</title>
+    <style>
+        .error-message { color: red; font-size: 1em; }
+    </style>
+</head>
+<body>
+        </br></br></br>
+
+     <form id="connexionForm">
+    <label for="email">Votre e-mail</label>
+    <input type="text" id="email" name="email" placeholder="adresse email" required> </imput>
+    <div id="emailError" class="error-message"></div>  
+
+</br></br></br>
+
+    <label class="password" for="password">MAUX DE PASSES</label>
+    <input type="password" class="login-field" value="" placeholder="password" id="password"></imput>
+    <div id="passwordError" class="error-message"></div>
+
+</br></br>     
+        <button type="submit">Valider</button>
+   </br> 
+
+</form>   
+
+<script>
+document.getElementById('email').addEventListener('input', function() {
+    const emailError = document.getElementById('emailError');
+    if (!this.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        emailError.textContent = 'Adresse email invalide.';
+    } else {
+        emailError.textContent = '';
+    }
+  });
+  
+  document.getElementById('password').addEventListener('input', function() {
+    const passwordError = document.getElementById('passwordError');
+    if (this.value.length < 8) {
+        passwordError.textContent = 'Le mot de passe doit contenir au moins 8 caractères.';
+    } else {
+        passwordError.textContent = '';
+    }
+  });
+  </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
